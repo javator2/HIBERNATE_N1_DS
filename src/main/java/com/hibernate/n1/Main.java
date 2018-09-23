@@ -48,6 +48,8 @@ public class Main {
 
     public static void main(String[] args) {
 
+//        prepareDB();
+
         List<Person> personList = session.createQuery("FROM Person p").list();
 
         for (Person person : personList) {
