@@ -13,8 +13,8 @@ public class Person {
     private String name;
 
     private String lastname;
-
-    @OneToMany(mappedBy = "person")
+// rozwiązanie podwójnych zapytań -> fetch = FetchType.EAGER
+    @OneToMany(mappedBy = "person"/*, fetch = FetchType.EAGER*/)
     private Set<Account> accountSet;
 
     public Person(){

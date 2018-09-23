@@ -50,7 +50,8 @@ public class Main {
 
 //        prepareDB();
 
-        List<Person> personList = session.createQuery("FROM Person p").list();
+//        List<Person> personList = session.createQuery("FROM Person p").list();
+        List<Person> personList = session.createQuery("select distinct p FROM Person p JOIN FETCH p.accountSet").list(); //inne rozwiązanie problemu podwójnych zapyatań -> zapytanie sqlowe
 
         for (Person person : personList) {
             System.out.println("Osoba: " + person.getName() + " : "
